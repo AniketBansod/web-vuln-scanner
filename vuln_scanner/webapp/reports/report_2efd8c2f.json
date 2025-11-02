@@ -1,0 +1,19 @@
+{
+  "target": "https://printhub-s7cs.onrender.com",
+  "timestamp": "2025-11-03 00:45:18",
+  "findings": [
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "https://printhub-s7cs.onrender.com",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "SQLi-suspected",
+      "param": "q",
+      "payload": "' OR 1=1 -- ",
+      "url": "https://printhub-s7cs.onrender.com?q=%27+OR+1%3D1+--+",
+      "evidence": "response length changed from 656 to 0"
+    }
+  ]
+}

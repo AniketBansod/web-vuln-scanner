@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>VulnScanner — Demo</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>VulnScanner — Demo</h1>
+    <p>Enter a target URL (only scan systems you own or are allowed to test).</p>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul class="flashes">
+        {% for category, msg in messages %}
+          <li class="{{ category }}">{{ msg }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <form method="post" class="card">
+      <label>Target URL</label>
+      <input type="text" name="target_url" placeholder="http://example.com/" required>
+      <small class="hint">We’ll automatically discover and scan same‑origin pages. Only scan targets you own or have permission to test.</small>
+      <button type="submit" class="primary">Start Scan</button>
+    </form>
+    <hr>
+    <h3>Recent tasks</h3>
+    <p>After starting a scan you will be redirected to the task page.</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Security Scan Report • {{ report.target }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    .summary { display:flex; gap:12px; flex-wrap:wrap; margin:14px 0 8px 0; }
+    .card { background:#f3f6ff; border:1px solid #e2e8ff; padding:12px 14px; border-radius:8px; min-width:120px; }
+    .k { color:#334; font-size:12px; text-transform:uppercase; letter-spacing:.4px; }
+    .v { font-size:20px; font-weight:700; }
+    .filters { display:flex; gap:8px; align-items:center; margin:12px 0 8px 0; }
+    .filters select, .filters input[type="search"] { padding:8px 10px; border:1px solid #ddd; border-radius:6px; }
+    table { width:100%; border-collapse: collapse; margin-top:8px; }
+    th, td { text-align:left; padding:10px; border-bottom:1px solid #eee; vertical-align:top; }
+    th { background:#fafbff; font-weight:600; position:sticky; top:0; }
+    .badge { display:inline-block; padding:2px 8px; border-radius:999px; font-size:12px; font-weight:600; }
+    .sev-High { background:#ffe3e6; color:#961c1c; }
+    .sev-Medium { background:#fff1cf; color:#7a5a00; }
+    .sev-Low { background:#e8f5e9; color:#1b5e20; }
+    .sev-Info { background:#e6f0ff; color:#1b3c8c; }
+    code { background:#f6f7fb; padding:2px 6px; border-radius:4px; }
+    .muted { color:#666; }
+    .chips { display:flex; gap:6px; flex-wrap:wrap; }
+    .chip { background:#f1f1f1; border:1px solid #e5e7eb; border-radius:999px; padding:2px 8px; font-size:12px; }
+    .actions { margin-top:12px; }
+  </style>
+  <script>
+    function filterTable() {
+      const q = document.getElementById('q').value.toLowerCase();
+      const sev = document.getElementById('sev').value;
+      const typ = document.getElementById('typ').value;
+      const rows = document.querySelectorAll('#findings tbody tr');
+      rows.forEach(tr => {
+        const txt = tr.innerText.toLowerCase();
+        const rowSev = tr.getAttribute('data-sev');
+        const rowTyp = tr.getAttribute('data-type');
+        const okQ = !q || txt.indexOf(q) !== -1;
+        const okS = !sev || rowSev === sev;
+        const okT = !typ || rowTyp === typ;
+        tr.style.display = (okQ && okS && okT) ? '' : 'none';
+      });
+      updateVisibleCount();
+    }
+    function updateVisibleCount(){
+      const rows = document.querySelectorAll('#findings tbody tr');
+      let visible = 0; rows.forEach(r => { if (r.style.display !== 'none') visible++; });
+      document.getElementById('visibleCount').innerText = visible;
+    }
+    function clearFilters(){
+      document.getElementById('q').value='';
+      document.getElementById('sev').value='';
+      document.getElementById('typ').value='';
+      filterTable();
+    }
+    window.addEventListener('DOMContentLoaded', () => {
+      filterTable();
+    });
+  </script>
+  </head>
+<body>
+  <div class="container">
+    <h1>Security Scan Report</h1>
+    <p class="muted">Target: <a href="{{ report.target }}" target="_blank">{{ report.target }}</a> • Generated: {{ report.timestamp }}</p>
+
+    <div class="summary">
+      <div class="card"><div class="k">Total findings</div><div class="v">{{ aggregates.total }}</div></div>
+      <div class="card"><div class="k">Affected pages</div><div class="v">{{ aggregates.affected_pages }}</div></div>
+      <div class="card"><div class="k">High</div><div class="v">{{ aggregates.severities['High'] }}</div></div>
+      <div class="card"><div class="k">Medium</div><div class="v">{{ aggregates.severities['Medium'] }}</div></div>
+      <div class="card"><div class="k">Low</div><div class="v">{{ aggregates.severities['Low'] }}</div></div>
+      <div class="card"><div class="k">Info</div><div class="v">{{ aggregates.severities['Info'] }}</div></div>
+    </div>
+
+    <div class="chips">
+      {% for t, c in aggregates.types.items() %}
+        <span class="chip">{{ t }}: {{ c }}</span>
+      {% endfor %}
+    </div>
+
+    <div class="filters">
+      <input id="q" type="search" placeholder="Search in table (url, param, payload, evidence)" oninput="filterTable()" style="flex:1" />
+      <select id="sev" onchange="filterTable()">
+        <option value="">All severities</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+        <option value="Info">Info</option>
+      </select>
+      <select id="typ" onchange="filterTable()">
+        <option value="">All types</option>
+        {% for t, _ in aggregates.types.items() %}
+          <option value="{{ t }}">{{ t }}</option>
+        {% endfor %}
+      </select>
+      <button onclick="clearFilters()">Clear</button>
+    </div>
+
+    {% if not findings %}
+      <p>No findings detected.</p>
+    {% else %}
+      <table id="findings">
+        <thead>
+          <tr>
+            <th style="width:90px;">Severity</th>
+            <th style="width:140px;">Type</th>
+            <th>URL</th>
+            <th style="width:110px;">Param</th>
+            <th>Payload / Header</th>
+            <th>Evidence</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for f in findings %}
+          <tr data-sev="{{ f.severity }}" data-type="{{ f.type }}">
+            <td><span class="badge sev-{{ f.severity }}">{{ f.severity }}</span></td>
+            <td>{{ f.type }}</td>
+            <td>{% if f.url %}<a href="{{ f.url }}" target="_blank">{{ f.url }}</a>{% else %}<span class="muted">-</span>{% endif %}</td>
+            <td>{{ f.param or '-' }}</td>
+            <td>
+              {% if f.type == 'Header-Missing' %}
+                <code>{{ f.header }}</code>
+              {% else %}
+                <code>{{ f.payload }}</code>
+              {% endif %}
+            </td>
+            <td>{{ f.evidence }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <div class="actions">
+        <span class="muted">Showing <span id="visibleCount">0</span> of {{ findings|length }} rows</span>
+      </div>
+    {% endif %}
+
+    <p class="actions"><a href="{{ url_for('download_report', task_id=task_id) }}">Download JSON</a> • <a href="{{ url_for('index') }}">Back</a></p>
+  </div>
+</body>
+</html>
