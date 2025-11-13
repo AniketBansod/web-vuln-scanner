@@ -1,5 +1,5 @@
 # webapp/app.py
-from flask import Flask, render_template, request, redirect, url_for, send_file, flash
+from flask import Flask, render_template, request, redirect, url_for, send_file, flash, jsonify
 import os
 import sys
 import threading
@@ -67,7 +67,29 @@ def index():
         t = threading.Thread(target=worker, args=(task_id, url, outpath, depth), daemon=True)
         t.start()
         return redirect(url_for("task", task_id=task_id))
-    return render_template("index.html")
+    # Build a small list of recent reports (best-effort from files on disk)
+    recent = []
+    try:
+        for fname in sorted(os.listdir(REPORTS_DIR), key=lambda x: os.path.getmtime(os.path.join(REPORTS_DIR, x)), reverse=True):
+            if not fname.startswith("report_") or not fname.endswith(".json"):
+                continue
+            path = os.path.join(REPORTS_DIR, fname)
+            try:
+                with open(path, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                tid = fname.replace("report_", "").replace(".json", "")
+                recent.append({
+                    "task_id": tid,
+                    "target": data.get("target"),
+                    "timestamp": data.get("timestamp"),
+                })
+            except Exception:
+                continue
+            if len(recent) >= 6:
+                break
+    except Exception:
+        pass
+    return render_template("index.html", recent_reports=recent)
 
 @app.route("/task/<task_id>")
 def task(task_id):
@@ -140,6 +162,18 @@ def view_report(task_id):
         findings=findings,
         aggregates=aggregates,
     )
+
+@app.route("/task/<task_id>/status.json")
+def task_status(task_id):
+    info = TASKS.get(task_id)
+    if not info:
+        return jsonify({"status": "unknown"}), 404
+    return jsonify({
+        "status": info.get("status"),
+        "target": info.get("target"),
+        "reportView": url_for("view_report", task_id=task_id),
+        "reportDownload": url_for("download_report", task_id=task_id),
+    })
 
 def _run_scan_sync_advanced(target_url, outpath, crawl_depth: int = 0):
     """Run scanner with optional crawl depth and write report to target outpath."""

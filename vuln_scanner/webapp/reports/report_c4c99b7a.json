@@ -1,0 +1,96 @@
+{
+  "target": "https://ai-project-ten-lilac.vercel.app/",
+  "timestamp": "2025-11-03 00:55:22",
+  "findings": [
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "https://ai-project-ten-lilac.vercel.app/",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "https://ai-project-ten-lilac.vercel.app/",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "https://ai-project-ten-lilac.vercel.app/",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "https://ai-project-ten-lilac.vercel.app/",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "https://ai-project-ten-lilac.vercel.app/",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "https://ai-project-ten-lilac.vercel.app/login",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "https://ai-project-ten-lilac.vercel.app/login",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "https://ai-project-ten-lilac.vercel.app/login",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "https://ai-project-ten-lilac.vercel.app/login",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "https://ai-project-ten-lilac.vercel.app/login",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "https://ai-project-ten-lilac.vercel.app/register",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "https://ai-project-ten-lilac.vercel.app/register",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "https://ai-project-ten-lilac.vercel.app/register",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "https://ai-project-ten-lilac.vercel.app/register",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "https://ai-project-ten-lilac.vercel.app/register",
+      "evidence": "No Permissions-Policy header present"
+    }
+  ]
+}

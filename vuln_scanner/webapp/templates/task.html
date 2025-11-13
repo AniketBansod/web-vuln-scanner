@@ -4,27 +4,72 @@
   <meta charset="utf-8" />
   <title>Task {{ task_id }}</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    .status { display:flex; align-items:center; gap:10px; }
+    .spinner { width:22px; height:22px; border:3px solid #e5e7eb; border-top-color:#2b6ef6; border-radius:50%; animation: spin 1s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .progress { height:10px; background:#eef2ff; border-radius:999px; overflow:hidden; margin-top:10px; }
+    .bar { height:100%; width:30%; background:linear-gradient(90deg,#2b6ef6,#5a8bff); animation: slide 1.5s ease-in-out infinite; }
+    @keyframes slide { 0%{ transform: translateX(-60%);} 50%{ transform: translateX(40%);} 100%{ transform: translateX(120%);} }
+    .skeleton { border:1px solid #e5e7eb; border-radius:8px; padding:12px; margin-top:14px; }
+    .shimmer { height:14px; background: linear-gradient(90deg, #f2f3f7 0%, #e6e9f2 40%, #f2f3f7 80%); background-size:200% 100%; animation: shimmer 1.2s infinite; border-radius:6px; margin-bottom:10px; }
+    @keyframes shimmer { 0%{ background-position: 200% 0;} 100%{ background-position: -200% 0;} }
+    .actions a { color:#2b6ef6; }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1>Scan Task {{ task_id }}</h1>
-    <p>Target: <strong>{{ info.target }}</strong></p>
-    <p>Status: <strong>{{ status }}</strong></p>
-    {% if status != 'done' %}
-      <meta http-equiv="refresh" content="3">
-      <p class="hint">This page auto-refreshes every 3s until the scan completes.</p>
-    {% endif %}
+    <h1>Scan Task</h1>
+    <p><span class="muted">ID:</span> {{ task_id }} • <span class="muted">Target:</span> <strong>{{ info.target }}</strong></p>
+
     {% if status == 'done' %}
-      <p>
-        <a href="{{ url_for('view_report', task_id=task_id) }}">View Report</a> |
+      <div class="status">
+        <div style="width:22px;height:22px;background:#22c55e;border-radius:50%"></div>
+        <div><strong>Completed</strong></div>
+      </div>
+      <div class="actions" style="margin-top:10px;">
+        <a href="{{ url_for('view_report', task_id=task_id) }}">View Report</a> •
         <a href="{{ url_for('download_report', task_id=task_id) }}">Download JSON</a>
-      </p>
+      </div>
     {% elif status == 'error' %}
+      <div class="status">
+        <div style="width:22px;height:22px;background:#ef4444;border-radius:50%"></div>
+        <div><strong>Failed</strong></div>
+      </div>
       <p>Scan failed. Check server logs.</p>
     {% else %}
-      <p>The scan is running. Refresh this page to update status.</p>
+      <div class="status">
+        <div class="spinner"></div>
+        <div><strong>{{ 'Queued' if status == 'queued' else 'Running' }}</strong></div>
+      </div>
+      <div class="progress"><div class="bar"></div></div>
+      <div class="skeleton">
+        <div class="shimmer" style="width:60%"></div>
+        <div class="shimmer" style="width:85%"></div>
+        <div class="shimmer" style="width:40%"></div>
+      </div>
+      <p class="muted">We're scanning pages and forms. This page updates automatically.</p>
     {% endif %}
-    <p><a href="{{ url_for('index') }}">Start another scan</a></p>
+
+    <p style="margin-top:16px"><a href="{{ url_for('index') }}">Start another scan</a></p>
   </div>
+
+  {% if status != 'done' and status != 'error' %}
+  <script>
+    // Poll the task status endpoint and redirect to report on completion
+  const tid = "{{ task_id }}";
+    async function poll(){
+      try {
+        const r = await fetch(`/task/${tid}/status.json`, { cache: 'no-store' });
+        if(!r.ok) return;
+        const d = await r.json();
+        if (d.status === 'done') { window.location = d.reportView; return; }
+        if (d.status === 'error') { location.reload(); return; }
+      } catch(e) {}
+    }
+    setInterval(poll, 2000);
+    poll();
+  </script>
+  {% endif %}
 </body>
 </html>

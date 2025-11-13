@@ -1,0 +1,588 @@
+{
+  "target": "http://www.itsecgames.com/",
+  "timestamp": "2025-11-03 10:32:28",
+  "findings": [
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://www.itsecgames.com/",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://www.itsecgames.com/",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://www.itsecgames.com/",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://www.itsecgames.com/",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://www.itsecgames.com/",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://www.itsecgames.com/download.htm",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://www.itsecgames.com/download.htm",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://www.itsecgames.com/download.htm",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://www.itsecgames.com/download.htm",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://www.itsecgames.com/download.htm",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://www.itsecgames.com/training.htm",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://www.itsecgames.com/training.htm",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://www.itsecgames.com/training.htm",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://www.itsecgames.com/training.htm",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://www.itsecgames.com/training.htm",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://www.itsecgames.com/bugs.htm",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://www.itsecgames.com/bugs.htm",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://www.itsecgames.com/bugs.htm",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://www.itsecgames.com/bugs.htm",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://www.itsecgames.com/bugs.htm",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://www.itsecgames.com/index.htm",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://www.itsecgames.com/index.htm",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://www.itsecgames.com/index.htm",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://www.itsecgames.com/index.htm",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://www.itsecgames.com/index.htm",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://www.itsecgames.com/downloads/vulnerabilities.txt",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://www.itsecgames.com/downloads/vulnerabilities.txt",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://www.itsecgames.com/downloads/vulnerabilities.txt",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://www.itsecgames.com/downloads/vulnerabilities.txt",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://www.itsecgames.com/downloads/vulnerabilities.txt",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_11.png",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://www.itsecgames.com/images/bWAPP_11.png",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://www.itsecgames.com/images/bWAPP_11.png",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_11.png",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_11.png",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_3.png",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://www.itsecgames.com/images/bWAPP_3.png",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://www.itsecgames.com/images/bWAPP_3.png",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_3.png",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_3.png",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_12.png",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://www.itsecgames.com/images/bWAPP_12.png",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://www.itsecgames.com/images/bWAPP_12.png",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_12.png",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_12.png",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "SQLi-suspected",
+      "param": "q",
+      "payload": "' OR '1'='1",
+      "url": "http://www.itsecgames.com/images/bWAPP_9.png?q=%27+OR+%271%27%3D%271",
+      "evidence": "response length changed from 0 to 78300"
+    },
+    {
+      "type": "SQLi-suspected",
+      "param": "q",
+      "payload": "' OR 1=1 -- ",
+      "url": "http://www.itsecgames.com/images/bWAPP_9.png?q=%27+OR+1%3D1+--+",
+      "evidence": "response length changed from 0 to 78300"
+    },
+    {
+      "type": "SQLi-suspected",
+      "param": "q",
+      "payload": "\" OR \"\" = \"",
+      "url": "http://www.itsecgames.com/images/bWAPP_9.png?q=%22+OR+%22%22+%3D+%22",
+      "evidence": "response length changed from 0 to 78300"
+    },
+    {
+      "type": "SQLi-suspected",
+      "param": "q",
+      "payload": "'; -- ",
+      "url": "http://www.itsecgames.com/images/bWAPP_9.png?q=%27%3B+--+",
+      "evidence": "response length changed from 0 to 78300"
+    },
+    {
+      "type": "SQLi-suspected",
+      "param": "q",
+      "payload": "' OR SLEEP(5)--",
+      "url": "http://www.itsecgames.com/images/bWAPP_9.png?q=%27+OR+SLEEP%285%29--",
+      "evidence": "response length changed from 0 to 78300"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_4.png",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://www.itsecgames.com/images/bWAPP_4.png",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://www.itsecgames.com/images/bWAPP_4.png",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_4.png",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_4.png",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_13.png",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://www.itsecgames.com/images/bWAPP_13.png",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://www.itsecgames.com/images/bWAPP_13.png",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_13.png",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_13.png",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_10.png",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://www.itsecgames.com/images/bWAPP_10.png",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://www.itsecgames.com/images/bWAPP_10.png",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_10.png",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_10.png",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_6.png",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://www.itsecgames.com/images/bWAPP_6.png",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://www.itsecgames.com/images/bWAPP_6.png",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_6.png",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_6.png",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_5.png",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://www.itsecgames.com/images/bWAPP_5.png",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://www.itsecgames.com/images/bWAPP_5.png",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_5.png",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_5.png",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_7.png",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://www.itsecgames.com/images/bWAPP_7.png",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://www.itsecgames.com/images/bWAPP_7.png",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_7.png",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_7.png",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_2.png",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://www.itsecgames.com/images/bWAPP_2.png",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://www.itsecgames.com/images/bWAPP_2.png",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_2.png",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_2.png",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_8.png",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://www.itsecgames.com/images/bWAPP_8.png",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://www.itsecgames.com/images/bWAPP_8.png",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_8.png",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://www.itsecgames.com/images/bWAPP_8.png",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Content-Security-Policy",
+      "url": "http://www.itsecgames.com/downloads/bWAPP_intro.pdf",
+      "evidence": "No Content-Security-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Frame-Options",
+      "url": "http://www.itsecgames.com/downloads/bWAPP_intro.pdf",
+      "evidence": "No X-Frame-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "X-Content-Type-Options",
+      "url": "http://www.itsecgames.com/downloads/bWAPP_intro.pdf",
+      "evidence": "No X-Content-Type-Options header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Referrer-Policy",
+      "url": "http://www.itsecgames.com/downloads/bWAPP_intro.pdf",
+      "evidence": "No Referrer-Policy header present"
+    },
+    {
+      "type": "Header-Missing",
+      "header": "Permissions-Policy",
+      "url": "http://www.itsecgames.com/downloads/bWAPP_intro.pdf",
+      "evidence": "No Permissions-Policy header present"
+    },
+    {
+      "type": "SQLi-suspected",
+      "param": "q",
+      "payload": "' OR SLEEP(5)--",
+      "url": "http://www.itsecgames.com/downloads/bWAPP_intro.pdf?q=%27+OR+SLEEP%285%29--",
+      "evidence": "response length changed from 4765179 to 0"
+    }
+  ]
+}

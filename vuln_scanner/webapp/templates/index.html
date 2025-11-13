@@ -2,13 +2,32 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>VulnScanner — Demo</title>
+  <title>Web Vulnerability Scanner</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    .hero { margin-bottom: 18px; }
+    .subtitle { color:#555; margin:6px 0 18px 0; }
+    .card { background:#fff; border:1px solid #e5e7eb; padding:16px; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.06); }
+    .input-row { display:flex; gap:8px; align-items:center; }
+    .input-row input { flex:1; padding:12px 14px; border:1px solid #d1d5db; border-radius:8px; font-size:15px; }
+    .hint { display:block; margin-top:8px; color:#666; font-size:12px; }
+    .primary { padding:12px 16px; border:none; background:linear-gradient(90deg,#2b6ef6,#5a8bff); color:#fff; border-radius:8px; font-weight:600; cursor:pointer; }
+    .primary:hover { filter:brightness(0.98); }
+    .recent { margin-top:22px; }
+    .recent ul { list-style:none; padding:0; margin:8px 0 0 0; }
+    .recent li { padding:8px 0; border-bottom:1px solid #eee; display:flex; justify-content:space-between; gap:10px; }
+    .muted { color:#666; }
+    .link { color:#2b6ef6; text-decoration:none; }
+    .link:hover { text-decoration:underline; }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1>VulnScanner — Demo</h1>
-    <p>Enter a target URL (only scan systems you own or are allowed to test).</p>
+    <div class="hero">
+      <h1>Web Vulnerability Scanner</h1>
+      <div class="subtitle">Fast, lightweight checks for common issues (SQLi, XSS, headers). Only scan systems you own or have permission to test.</div>
+    </div>
+
     {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
         <ul class="flashes">
@@ -18,15 +37,36 @@
         </ul>
       {% endif %}
     {% endwith %}
+
     <form method="post" class="card">
-      <label>Target URL</label>
-      <input type="text" name="target_url" placeholder="http://example.com/" required>
-      <small class="hint">We’ll automatically discover and scan same‑origin pages. Only scan targets you own or have permission to test.</small>
-      <button type="submit" class="primary">Start Scan</button>
+      <label for="target_url"><strong>Target URL</strong></label>
+      <div class="input-row">
+        <input id="target_url" type="text" name="target_url" placeholder="http://testphp.vulnweb.com/" required>
+        <button type="submit" class="primary">Start Scan</button>
+      </div>
+      <small class="hint">We’ll automatically crawl and test same‑origin pages. Depth is auto‑tuned for speed.</small>
     </form>
-    <hr>
-    <h3>Recent tasks</h3>
-    <p>After starting a scan you will be redirected to the task page.</p>
+
+    <div class="recent">
+      <h3>Recent reports</h3>
+      {% if not recent_reports %}
+        <p class="muted">No reports yet. Start your first scan above.</p>
+      {% else %}
+        <ul>
+          {% for r in recent_reports %}
+          <li>
+            <span>
+              <a class="link" href="{{ url_for('view_report', task_id=r.task_id) }}">{{ r.target }}</a>
+              <span class="muted">• {{ r.timestamp }}</span>
+            </span>
+            <span>
+              <a class="link" href="{{ url_for('download_report', task_id=r.task_id) }}">Download</a>
+            </span>
+          </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
   </div>
 </body>
 </html>

@@ -15,3 +15,6 @@ table { font-size: 14px; }
 th { font-size: 13px; color:#334; }
 td a { color:#2b6ef6; text-decoration:none; }
 td a:hover { text-decoration:underline; }
+
+/* Utility */
+.muted { color:#666; }
