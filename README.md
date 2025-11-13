@@ -9,7 +9,7 @@ Fast, lightweight Python/Flask scanner that crawls a target, probes for reflecte
 [![Python](https://img.shields.io/badge/Python-3.x-blue.svg?logo=python)](https://www.python.org/)
 [![Flask](https://img.shields.io/badge/Flask-2%2B-000?logo=flask)](https://flask.palletsprojects.com/)
 [![Requests](https://img.shields.io/badge/HTTP-requests-6DB33F)](https://requests.readthedocs.io/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#-license)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#license)
 
 </div>
 
@@ -132,6 +132,18 @@ Example JSON report (trimmed):
 
 ## ⚙️ Configuration
 
+## 📷 Screenshots
+
+<div align="center">
+
+| Home Page                                                                                         | Report View                                                                                                   |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| <img src="docs/Screenshot%202025-11-05%20121754.png" alt="Home page with scan form" width="430"/> | <img src="docs/Screenshot%202025-11-05%20121927.png" alt="Report view showing findings summary" width="430"/> |
+
+</div>
+
+> Screenshots are illustrative; findings and counts vary per target. Only scan systems you are authorized to test.
+
 - No required environment variables for local development.
 - Defaults you can tune in code:
   - Crawl depth (UI): `depth = 2` in `webapp/app.py` (POST handler on `/`).
@@ -203,7 +215,9 @@ vuln_scanner/
 
 ## 📝 License
 
-MIT. See the LICENSE file (add one if missing) for details.
+Released under the MIT License. See `LICENSE` for the full text.
+
+Copyright (c) 2025 Aniket Bansod. Permission is granted to use this project for educational or commercial purposes under the terms above. The software is provided "AS IS" without warranty; always obtain proper authorization before scanning any target.
 
 ## 🙌 Acknowledgements
 
