@@ -198,8 +198,54 @@ vuln_scanner/
 
 ## 📦 Deployment
 
-- Local development: run the Flask app directly (`python webapp/app.py`).
-- Production: run the Flask app behind a production‑grade WSGI server and reverse proxy; configure the secret key and HTTPS at the proxy/load balancer. CI/CD and Docker files are not included in this repository.
+### Option A — Docker (simple and portable)
+
+Build and run locally:
+
+```powershell
+docker build -t web-vuln-scanner .
+docker run --rm -p 8000:8000 -e PORT=8000 web-vuln-scanner
+```
+
+Open http://localhost:8000.
+
+Deploy to any container platform (Render, Azure Container Apps, Fly.io, etc.). The image runs `gunicorn webapp.app:app` and respects `$PORT`.
+
+### Option B — Render (one‑click deploy)
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/AniketBansod/web-vuln-scanner)
+
+This repo includes `render.yaml` which provisions a Docker‑based Web Service.
+Steps if you prefer the dashboard:
+
+1. Push to GitHub and open Render → New → Web Service → connect repo.
+2. Runtime: Docker (auto‑detected). No build/run commands needed.
+3. Environment: add `SECRET_KEY` (random string). Render sets `$PORT` automatically.
+4. Deploy and open the service URL when ready.
+
+### Option C — Azure App Service (container)
+
+Using Azure CLI and the Dockerfile in this repo:
+
+```powershell
+# Variables
+$RG="vulnscanner-rg"; $LOC="eastus"; $ACR="vulnscanneracr$((Get-Random))"; $APP="vulnscanner-app$((Get-Random))"
+
+az group create -n $RG -l $LOC
+az acr create -n $ACR -g $RG --sku Basic
+az acr build -t web-vuln-scanner:latest -r $ACR .
+
+az appservice plan create -g $RG -n "$APP-plan" --is-linux --sku B1
+az webapp create -g $RG -p "$APP-plan" -n $APP --deployment-container-image-name "$(az acr show -n $ACR --query loginServer -o tsv)/web-vuln-scanner:latest"
+az webapp config appsettings set -g $RG -n $APP --settings WEBSITES_PORT=8000
+```
+
+The app will be available at `https://$APP.azurewebsites.net`.
+
+Notes:
+
+- Set `app.secret_key` to a strong value via environment variable or app setting before exposing publicly.
+- Always deploy behind HTTPS; terminate TLS at your platform/load balancer.
 
 ## 🧠 Future Improvements
 

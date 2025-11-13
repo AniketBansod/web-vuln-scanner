@@ -1,0 +1,32 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+**/__pycache__
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.vscode/
+.venv/
+**/.venv
+**/.venv/**
+.env
+
+# Python packaging
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Git
+.git/
+.gitignore
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Reports and runtime artifacts
+vuln_scanner/webapp/reports/
+
+# Docs & media (not needed in image)
+docs/

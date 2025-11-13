@@ -21,7 +21,8 @@ REPORTS_DIR = os.path.join(APP_ROOT, "reports")
 os.makedirs(REPORTS_DIR, exist_ok=True)
 
 app = Flask(__name__, template_folder="templates", static_folder="static")
-app.secret_key = "change-this-secret-to-something-safe"
+# Prefer SECRET_KEY from environment for production deployments
+app.secret_key = os.getenv("SECRET_KEY", "change-this-secret-to-something-safe")
 
 # We will run scan in a background thread to keep UI responsive (simple approach)
 # scan tasks map: task_id -> {"status": "queued|running|done", "report": path}

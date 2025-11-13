@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: web-vuln-scanner
+    env: docker
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+    plan: free
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
